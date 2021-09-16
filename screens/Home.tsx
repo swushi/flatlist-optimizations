@@ -14,6 +14,10 @@ const Home = (props: Props) => {
         <View>
             <Button 
                 title="Stateless List (Preferred)"
+                onPress={() => navigation.navigate('StatelessList')}
+            />
+            <Button 
+                title="Single State Update Per Item"
                 onPress={() => navigation.navigate('MonoStateUpdateList')}
             />
         </View>

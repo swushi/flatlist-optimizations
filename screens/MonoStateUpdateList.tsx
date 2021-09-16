@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlatList } from 'react-native'
-import StatelessListItem from '../components/StatelessListItem';
+import StatefulItem from '../components/StatefulListItem';
 
 import data from '../data/MOCK_DATA';
 
@@ -12,7 +12,7 @@ const MonoStateUpdateList = (props: Props) => {
     return (
         <FlatList 
             data={data}
-            renderItem={({item}) => <StatelessListItem {...item} />}
+            renderItem={({item}) => <StatefulItem id={item.id} /> }
         />
     )
 }

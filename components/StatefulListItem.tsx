@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, Image } from "react-native";
+
+import data from "../data/MOCK_DATA";
 import { Model } from "../data/model";
 
-const StatelessListItem = ({ first_name, last_name, id, message, image }: Model) => {
+const StatefulItem = ({ id: providedId }: { id: number }) => {
+  const [state, setState] = useState<Model>();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setState(data.find(({ id }) => id === providedId));
+    }, 100);
+  }, []);
+
+  if (!state) return null;
+
+  const { first_name, last_name, message, image } = state;
+
   return (
     <View
-      key={id}
+      key={providedId}
       style={{
         marginBottom: 25,
-        backgroundColor: 'white',
+        backgroundColor: "white",
         borderRadius: 8,
-        padding: 12
+        padding: 12,
       }}
     >
       <View
@@ -34,4 +48,4 @@ const StatelessListItem = ({ first_name, last_name, id, message, image }: Model)
   );
 };
 
-export default StatelessListItem;
+export default StatefulItem;

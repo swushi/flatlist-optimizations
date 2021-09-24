@@ -8,12 +8,15 @@ import {
 
 import Home from "../screens/Home";
 import MonoStateUpdateList from "../screens/MonoStateUpdateList";
+import SwrDemo from "../screens/SwrDemo";
 
 type RootStackParamList = {
   Home: undefined;
 
   StatelessList: undefined;
   MonoStateUpdateList: undefined;
+
+  SwrDemo: undefined;
 };
 
 export type UseNavigationProp = NativeStackNavigationProp<RootStackParamList>;
@@ -32,6 +35,10 @@ const AppNavigator = () => {
         <RootStack.Screen
           name="MonoStateUpdateList"
           component={MonoStateUpdateList}
+        />
+        <RootStack.Screen
+          name="SwrDemo"
+          component={SwrDemo}
         />
       </RootStack.Navigator>
     </NavigationContainer>

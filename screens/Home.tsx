@@ -20,6 +20,10 @@ const Home = (props: Props) => {
                 title="Single State Update Per Item"
                 onPress={() => navigation.navigate('MonoStateUpdateList')}
             />
+            <Button 
+                title="SWR Demo"
+                onPress={() => navigation.navigate('SwrDemo')}
+            />
         </View>
     )
 }
